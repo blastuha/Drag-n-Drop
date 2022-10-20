@@ -44,6 +44,8 @@ body {
 
 .item:active {
   cursor: grabbing;
+  animation: shakingitem .1s infinite alternate;
+  transform: translate(-9px, -15px);
 }
 
 .placeholder {
@@ -64,7 +66,17 @@ body {
 }
 
 .hold {
-  border: 5px solid red
+  border: 1px solid rgb(197, 196, 196);
+  background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+  color: white;
+}
+
+/* animate on active item */
+@keyframes shakingitem {
+  0% { transform: translate(-8px, -14px); }
+  33% { transform: translate(-10px, -14px); }
+  66% { transform: translate(-18px, -18px); }
+  100% { transform: translate(-8px, -16px); }
 }
 
 .hide {
@@ -72,5 +84,8 @@ body {
 }
 
 .hovered {
-  border-top: 2px solid rgb(211, 195, 226)
+  border: 2px solid rgb(211, 195, 226);
+  background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+  border-radius: 20px;
+  opacity: 30%;
 }
